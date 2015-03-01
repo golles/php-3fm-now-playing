@@ -1,8 +1,7 @@
 {
   "name": "golles/php-3fm-now-playing",
   "description": "Helper classes to retrieve and decode now playing from Dutch radio 3FM",
-  "keywords": ["3FM", "now playing", "php"
-  ],
+  "keywords": ["3FM", "now playing", "php"],
   "homepage": "http://golles.nl",
   "authors": [
     {
@@ -15,15 +14,9 @@
     "issues": "https://github.com/golles/php-3fm-now-playing/issues?q=is%3Aopen",
     "source": "https://github.com/golles/php-3fm-now-playing"
   },
-  "require": {
-    "php": ">=5.2.0"
-  },
   "autoload": {
     "psr-4": {
       "golles\\radio3fm\\": ""
     }
-  },
-  "config": {
-    "process-timeout": 1800
   }
 }
