@@ -14,6 +14,9 @@
     "issues": "https://github.com/golles/php-3fm-now-playing/issues?q=is%3Aopen",
     "source": "https://github.com/golles/php-3fm-now-playing"
   },
+  "require": {
+      "php": ">=5.2.0"
+  },
   "autoload": {
     "psr-4": {
       "golles\\radio3fm\\": ""
