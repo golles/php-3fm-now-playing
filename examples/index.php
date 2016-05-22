@@ -6,8 +6,7 @@ use golles\radio3fm\Helper3FM;
 use golles\radio3fm\Response3FM;
 
 $helper = new Helper3FM();
-$helper->get3FMNowPlaying();
-$nowPlaying = $helper->getResponse3FM();
+$nowPlaying = $helper->get3FMNowPlaying();
 
 // Parse the information and output it as human readable text.
 echo ucwords($nowPlaying->artist . ' - ' . $nowPlaying->title);

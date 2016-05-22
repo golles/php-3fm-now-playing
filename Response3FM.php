@@ -5,7 +5,8 @@ namespace golles\radio3fm;
 /**
  * Class Response3FM Simple object that represents the response from 3FM. It also handles decoding of encoded strings.
  */
-class Response3FM {
+class Response3FM
+{
     public $artist_id;
     public $artist_url;
     public $song_id;
@@ -21,7 +22,8 @@ class Response3FM {
      *
      * @param string|null $jsonString
      */
-    public function __construct($jsonString = null) {
+    public function __construct($jsonString = null)
+    {
         if ($jsonString != null) {
             $json = json_decode($jsonString);
 
@@ -48,7 +50,8 @@ class Response3FM {
      *
      * @return string decoded.
      */
-    private function decodeString($string) {
+    private function decodeString($string)
+    {
         $decoded = '';
 
         foreach (array_reverse(str_split($string)) as $s) {
@@ -65,14 +68,14 @@ class Response3FM {
      *
      * @return string encoded character.
      */
-    private function decodeCharacter($char) {
+    private function decodeCharacter($char)
+    {
         if (preg_match('/^[a-zA-Z]$/', $char) == 1) {
             $c = floor(ord($char) / 97);
             $k = (ord(strtolower($char)) - 83) % 26;
 
             return chr((($k === 0) ? 26 : $k) + (($c === 0) ? 64 : 96));
-        }
-        else {
+        } else {
             return $char;
         }
     }
