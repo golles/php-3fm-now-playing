@@ -1,12 +1,17 @@
 <?php
-include_once '../Helper3FM.php';
-include_once '../Response3FM.php';
+include_once '../Radio3FmHelper.php';
+include_once '../Radio3FmResponse.php';
 
-use golles\radio3fm\Helper3FM;
-use golles\radio3fm\Response3FM;
+use golles\radio3fm\Radio3FmHelper;
 
-$helper = new Helper3FM();
-$nowPlaying = $helper->get3FMNowPlaying();
+$nowPlaying = Radio3FmHelper::get3FMNowPlaying();
 
 // Parse the information and output it as human readable text.
-echo ucwords($nowPlaying->artist . ' - ' . $nowPlaying->title);
+echo '<h2>Simple</h2>';
+echo 'Now playing: ' . ucwords($nowPlaying->artist . ' - ' . $nowPlaying->title) . '<br>';
+echo 'Or shorter: ' . ucwords($nowPlaying) . '<br>';
+
+echo '<h2>Data</h2>';
+echo '<pre>';
+print_r($nowPlaying);
+echo '</pre>';
