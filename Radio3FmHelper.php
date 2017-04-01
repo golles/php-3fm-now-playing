@@ -10,11 +10,11 @@ class Radio3FmHelper
     /**
      * @var string 3fm website to prefix some data fields.
      */
-    private static $WEBSITE = 'http://www.3fm.nl';
+    private static $WEBSITE = 'http://www.npo3fm.nl';
     /**
      * @var string url where to find the 3fm now playing json.
      */
-    private static $URL = 'http://www.3fm.nl/data/cache/jsonp/nowplaying-encoded.json?callback=driefmJsonNowplaying5&_=%s';
+    private static $URL = 'http://www.npo3fm.nl/data/cache/jsonp/nowplaying-encoded.json?callback=driefmJsonNowplaying5&_=%s';
 
     /**
      * Retrieve the now playing data from the 3FM web page.
@@ -66,13 +66,12 @@ class Radio3FmHelper
                         case 'artist_url':
                         case 'song_url':
                             if ($value != null) {
-                                $value = Radio3FmHelper::decodeString($value);
-                                $value = Radio3FmHelper::$WEBSITE . $value;
+                                $value = Radio3FmHelper::$WEBSITE . Radio3FmHelper::decodeString($value);
                             }
                             break;
                         case 'artist':
                         case 'title':
-                            $value = Radio3FmHelper::decodeString($value);
+                            $value = mb_convert_case(Radio3FmHelper::decodeString($value), MB_CASE_TITLE, 'UTF-8');
                             break;
                     }
                     $radio3FmResponse->$key = $value;
