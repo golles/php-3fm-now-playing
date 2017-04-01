@@ -10,11 +10,11 @@ class Radio3FmHelper
     /**
      * @var string 3fm website to prefix some data fields.
      */
-    private static $WEBSITE = 'http://www.npo3fm.nl';
+    private static $WEBSITE = 'http://www.3fm.nl';
     /**
      * @var string url where to find the 3fm now playing json.
      */
-    private static $URL = 'http://www.npo3fm.nl/data/cache/jsonp/nowplaying-encoded.json?callback=driefmJsonNowplaying5&_=%s';
+    private static $URL = 'http://www.3fm.nl/data/cache/jsonp/nowplaying-encoded.json?callback=driefmJsonNowplaying5&_=%s';
 
     /**
      * Retrieve the now playing data from the 3FM web page.
